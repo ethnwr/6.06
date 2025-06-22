@@ -1,0 +1,293 @@
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="av" x:Class="KeyboardTrainer.MainWindow"
+        Title="Клавиатурный тренажер" Height="650" Width="950"
+        KeyDown="Window_KeyDown" KeyUp="Window_KeyUp">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}" x:Key="KeyButtonStyle">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="5" 
+                                Background="#FFC3C3C3" BorderBrush="Black" 
+                                BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                            VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="ControlButtonStyle" BasedOn="{StaticResource KeyButtonStyle}">
+            <Setter Property="Width" Value="80"/>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="SpecialKeyStyle" BasedOn="{StaticResource KeyButtonStyle}">
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <Style TargetType="{x:Type Button}" x:Key="SeconKeyButtonStyle">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="5" 
+                Background="#FFFF7171" BorderBrush="Black" 
+                BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                            VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="ThirdKeyButtonStyle">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="5" 
+        Background="#FFEBEC76" BorderBrush="Black" 
+        BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="FourthKeyButtonStyle">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="5" 
+        Background="#FF74EC53" BorderBrush="Black" 
+        BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                    VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="FifthhKeyButtonStyle">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="5" 
+Background="#FF47D7EA" BorderBrush="Black" 
+BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" 
+    VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="SixthhKeyButtonStyle">
+            <Setter Property="Width" Value="40"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="5" 
+Background="#FFD853F7" BorderBrush="Black" 
+BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" 
+    VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style TargetType="{x:Type Button}" x:Key="SpaceKeyButtonStyle">
+            <Setter Property="Width" Value="300"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Margin" Value="2"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="5" 
+Background="#FFFFAD34" BorderBrush="Black" 
+BorderThickness="1">
+                            <ContentPresenter HorizontalAlignment="Center" 
+    VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="LightBlue"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Панель управления -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" Margin="10">
+            <Button x:Name="StartBtn" Content="Start" Click="Start_Click" Style="{StaticResource ControlButtonStyle}"/>
+            <Button x:Name="StopBtn" Content="Stop" Click="Stop_Click" Style="{StaticResource ControlButtonStyle}" IsEnabled="False"/>
+            <CheckBox x:Name="CaseCheck" Content="Учитывать регистр" Margin="10,0" VerticalAlignment="Center"/>
+            <TextBlock Text="Длина:" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            <Slider x:Name="LengthSlider" Minimum="5" Maximum="50" Value="10" Width="100" VerticalAlignment="Center"/>
+        </StackPanel>
+
+        <!-- Статистика -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Скорость: "/>
+            <TextBlock x:Name="SpeedText" Text="0" FontWeight="Bold"/>
+            <TextBlock Text=" сим/мин | Ошибки: "/>
+            <TextBlock x:Name="ErrorText" Text="0" FontWeight="Bold"/>
+        </StackPanel>
+
+        <!-- Целевая строка -->
+        <TextBlock x:Name="TargetText" Grid.Row="2" FontSize="24" Margin="10" HorizontalAlignment="Center" FontFamily="Consolas"/>
+
+        <!-- Клавиатура -->
+        <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto" Padding="10">
+            <StackPanel>
+                <!-- Первый ряд -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
+                    <Button x:Name="KeyBackQuote" Content="`" Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="Key1" Content="1" Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="Key2" Content="2" Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="Key3" Content="3" Style="{StaticResource ThirdKeyButtonStyle}"/>
+                    <Button x:Name="Key4" Content="4" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="Key5" Content="5" Style="{StaticResource FifthhKeyButtonStyle}"/>
+                    <Button x:Name="Key6" Content="6" Style="{StaticResource FifthhKeyButtonStyle}"/>
+                    <Button x:Name="Key7" Content="7" Style="{StaticResource SixthhKeyButtonStyle}"/>
+                    <Button x:Name="Key8" Content="8" Style="{StaticResource SixthhKeyButtonStyle}"/>
+                    <Button x:Name="Key9" Content="9" Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="Key0" Content="0" Style="{StaticResource ThirdKeyButtonStyle}"/>
+                    <Button x:Name="KeyMinus" Content="-" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyEquals" Content="=" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyEquals_Копировать" Width="100" Content="Backspace" Style="{StaticResource KeyButtonStyle}"/>
+                </StackPanel>
+
+                <!-- Второй ряд -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
+                    <Button x:Name="KeyTab" Content="Tab" Width="60" Style="{StaticResource KeyButtonStyle}"/>
+                    <Button x:Name="KeyQ" Content="q" Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="KeyW" Content="w" Style="{StaticResource ThirdKeyButtonStyle}"/>
+                    <Button x:Name="KeyE" Content="e" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyR" Content="r" Style="{StaticResource FifthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyT" Content="t" Style="{StaticResource FifthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyY" Content="y" Style="{StaticResource SixthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyU" Content="u" Style="{StaticResource SixthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyI" Content="i" Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="KeyO" Content="o" Style="{StaticResource ThirdKeyButtonStyle}"/>
+                    <Button x:Name="KeyP" Content="p" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyLeftBracket" Content="[" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyRightBracket" Content="]" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyBackslash" Content="\" Width="80" Style="{StaticResource FourthKeyButtonStyle}"/>
+                </StackPanel>
+
+                <!-- Третий ряд -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
+                    <Button x:Name="KeyCaps" Content="Capslock" Width="85" Style="{StaticResource KeyButtonStyle}"/>
+                    <Button x:Name="KeyA" Content="a" Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="KeyS" Content="s" Style="{StaticResource ThirdKeyButtonStyle}"/>
+                    <Button x:Name="KeyD" Content="d" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyF" Content="f" Style="{StaticResource FifthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyG" Content="g" Style="{StaticResource FifthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyH" Content="h" Style="{StaticResource SixthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyJ" Content="j" Style="{StaticResource SixthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyK" Content="k" Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="KeyL" Content="l" Style="{StaticResource ThirdKeyButtonStyle}"/>
+                    <Button x:Name="KeySemicolon" Content=";" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyApostrophe" Content="'" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyApostrophe_Копировать" Content="'" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyRightEnter" Content="Enter" Width="55" Style="{StaticResource KeyButtonStyle}"/>
+                </StackPanel>
+
+                <!-- Четвертый ряд -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
+                    <Button x:Name="KeyLeftShift" Content="Shift" Width="115" Style="{StaticResource KeyButtonStyle}"/>
+                    <Button x:Name="KeyZ" Content="z" Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="KeyX" Content="x" Style="{StaticResource ThirdKeyButtonStyle}"/>
+                    <Button x:Name="KeyC" Content="c" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyV" Content="v" Style="{StaticResource FifthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyB" Content="b" Style="{StaticResource FifthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyN" Content="n" Style="{StaticResource SixthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyM" Content="m" Style="{StaticResource SixthhKeyButtonStyle}"/>
+                    <Button x:Name="KeyComma" Content="," Style="{StaticResource SeconKeyButtonStyle}"/>
+                    <Button x:Name="KeyPeriod" Content="." Style="{StaticResource ThirdKeyButtonStyle}"/>
+                    <Button x:Name="KeySlash" Content="/" Style="{StaticResource FourthKeyButtonStyle}"/>
+                    <Button x:Name="KeyRightShift" Content="Shift" Width="115" Style="{StaticResource KeyButtonStyle}"/>
+                </StackPanel>
+
+                <!-- Пятый ряд -->
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0">
+                    <Button x:Name="KeyLeftCtrl" Content="Ctrl" Width="59" Style="{StaticResource KeyButtonStyle}"/>
+                    <Button x:Name="KeyLeftWin" Content="Win" Width="59" Style="{StaticResource KeyButtonStyle}"/>
+                    <Button x:Name="KeyLeftAlt" Content="Alt" Width="58" Style="{StaticResource KeyButtonStyle}"/>
+                    <Button x:Name="KeySpace" Content="Space" Style="{StaticResource SpaceKeyButtonStyle}"/>
+                    <Button x:Name="KeyRightAlt" Content="Alt" Width="58" Style="{StaticResource KeyButtonStyle}"/>
+                    <Button x:Name="KeyRightWin" Content="Win" Width="59" Style="{StaticResource KeyButtonStyle}"/>
+                    <Button x:Name="KeyRightCtrl" Content="Ctrl" Width="59" Style="{StaticResource KeyButtonStyle}"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</Window>
